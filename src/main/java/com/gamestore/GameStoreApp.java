@@ -1,20 +1,66 @@
 package main.java.com.gamestore;
 
+import java.util.Scanner;
+
 public class GameStoreApp {
     public static void main(String[] args) {
-        Game game1 = new Game("Elden Ring", 59.99);
-        Game game2 = new Game("Stardew Valley", 14.99);
-
+        Scanner scanner = new Scanner(System.in);
         Cart cart = new Cart();
-        cart.addGame(game1);
-        cart.addGame(game2);
+        PurchaseService purchaseService = new PurchaseService();
 
-        System.out.println("Cart total: $" + cart.getTotalPrice());
+        while (true) {
+            System.out.println("\n1. Add Game");
+            System.out.println("2. Remove Game");
+            System.out.println("3. View Cart");
+            System.out.println("4. Checkout");
+            System.out.println("5. Exit");
+            System.out.print("Choice: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
 
-        PurchaseService service = new PurchaseService();
-        boolean purchased = service.purchase(cart);
+            switch (choice) {
+                case 1:
+                    System.out.print("Game name: ");
+                    String name = scanner.nextLine();
+                    System.out.print("Price: ");
+                    double price = scanner.nextDouble();
+                    scanner.nextLine();
+                    cart.addGame(new Game(name, price));
+                    break;
 
-        System.out.println("Purchase successful? " + purchased);
-        System.out.println("Cart total after purchase: $" + cart.getTotalPrice());
+                case 2:
+                    System.out.print("Game name to remove: ");
+                    String toRemove = scanner.nextLine();
+                    if (cart.removeGame(toRemove)) {
+                        System.out.println("Removed.");
+                    } else {
+                        System.out.println("Not found.");
+                    }
+                    break;
+
+                case 3:
+                    System.out.println("\n--- Cart ---");
+                    for (Game g : cart.getGames()) {
+                        System.out.println(g);
+                    }
+                    System.out.printf("Total: $%.2f%n", cart.getTotal());
+                    break;
+
+                case 4:
+                    if (cart.getGames().isEmpty()) {
+                        System.out.println("Cart is empty.");
+                    } else {
+                        purchaseService.checkout(cart);
+                    }
+                    break;
+
+                case 5:
+                    System.out.println("Bye!");
+                    return;
+
+                default:
+                    System.out.println("Invalid.");
+            }
+        }
     }
 }

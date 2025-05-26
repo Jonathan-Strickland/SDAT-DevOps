@@ -1,19 +1,16 @@
 package main.java.com.gamestore;
 
 public class Game {
-    private final String title;
-    private final double price;
+    private String name;
+    private double price;
 
-    public Game(String title, double price) {
-        if (title == null || title.isBlank()) throw new IllegalArgumentException("Title cannot be empty");
-        if (price < 0) throw new IllegalArgumentException("Price cannot be negative");
-
-        this.title = title;
+    public Game(String name, double price) {
+        this.name = name;
         this.price = price;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
     public double getPrice() {
@@ -22,6 +19,6 @@ public class Game {
 
     @Override
     public String toString() {
-        return title + " - $" + price;
+        return name + " ($" + price + ")";
     }
 }

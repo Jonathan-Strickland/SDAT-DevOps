@@ -1,10 +1,14 @@
 package main.java.com.gamestore;
 
 public class PurchaseService {
-    public boolean purchase(Cart cart) {
-        if (cart == null || cart.getItems().isEmpty()) return false;
-
+    public void checkout(Cart cart) {
+        System.out.println("\n--- Checkout ---");
+        for (Game g : cart.getGames()) {
+            System.out.println(g);
+        }
+        System.out.printf("Total: $%.2f%n", cart.getTotal());
         cart.clear();
-        return true;
+        System.out.println("Thank you for your purchase!");
     }
 }
+

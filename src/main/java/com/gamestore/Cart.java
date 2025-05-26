@@ -4,26 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cart {
-    private final List<Game> items = new ArrayList<>();
+    private List<Game> games = new ArrayList<>();
 
     public void addGame(Game game) {
-        if (game == null) throw new IllegalArgumentException("Game cannot be null");
-        items.add(game);
+        games.add(game);
     }
 
-    public boolean removeGame(Game game) {
-        return items.remove(game);
+    public boolean removeGame(String name) {
+        return games.removeIf(g -> g.getName().equalsIgnoreCase(name));
     }
 
-    public double getTotalPrice() {
-        return items.stream().mapToDouble(Game::getPrice).sum();
+    public List<Game> getGames() {
+        return games;
     }
 
-    public List<Game> getItems() {
-        return new ArrayList<>(items);
+    public double getTotal() {
+        return games.stream().mapToDouble(Game::getPrice).sum();
     }
 
     public void clear() {
-        items.clear();
+        games.clear();
     }
 }
+
