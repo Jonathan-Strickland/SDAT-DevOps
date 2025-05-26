@@ -20,7 +20,7 @@ public class Cart {
     }
 
     public List<Game> getItems() {
-        return new ArrayList<>(items); // Return copy to protect internal list
+        return new ArrayList<>(items);
     }
 
     public void clear() {
