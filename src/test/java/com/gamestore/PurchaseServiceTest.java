@@ -33,4 +33,3 @@ public class PurchaseServiceTest {
         assertEquals(0, cart.getGames().size());
     }
 }
-

@@ -1,3 +1,3 @@
-test\java\com\gamestore\GameTest.class
-test\java\com\gamestore\PurchaseServiceTest.class
-test\java\com\gamestore\CartTest.class
+com\gamestore\PurchaseServiceTest.class
+com\gamestore\GameTest.class
+com\gamestore\CartTest.class

@@ -1,4 +1,4 @@
-main\java\com\gamestore\GameStoreApp.class
-main\java\com\gamestore\Cart.class
-main\java\com\gamestore\Game.class
-main\java\com\gamestore\PurchaseService.class
+com\gamestore\Cart.class
+com\gamestore\Game.class
+com\gamestore\GameStoreApp.class
+com\gamestore\PurchaseService.class

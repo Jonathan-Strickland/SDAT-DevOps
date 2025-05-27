@@ -45,4 +45,3 @@ public class CartTest {
         assertEquals(0.0, cart.getTotal());
     }
 }
-
