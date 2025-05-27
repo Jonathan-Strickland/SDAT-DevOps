@@ -1,4 +1,4 @@
-package main.java.com.gamestore;
+package com.gamestore;
 
 import java.util.Scanner;
 

@@ -1,13 +1,8 @@
-package test.java.com.gamestore;
+package com.gamestore;
 
-import main.java.com.gamestore.Cart;
-import main.java.com.gamestore.Game;
-import main.java.com.gamestore.PurchaseService;
 import org.junit.jupiter.api.Test;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PurchaseServiceTest {

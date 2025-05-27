@@ -1,6 +1,5 @@
-package test.java.com.gamestore;
+package com.gamestore;
 
-import main.java.com.gamestore.Game;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

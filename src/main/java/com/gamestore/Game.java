@@ -1,4 +1,4 @@
-package main.java.com.gamestore;
+package com.gamestore;
 
 public class Game {
     private String name;

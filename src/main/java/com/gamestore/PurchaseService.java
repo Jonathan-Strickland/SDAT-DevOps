@@ -1,4 +1,4 @@
-package main.java.com.gamestore;
+package com.gamestore;
 
 public class PurchaseService {
     public void checkout(Cart cart) {
